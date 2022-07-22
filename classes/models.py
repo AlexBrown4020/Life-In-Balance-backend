@@ -6,3 +6,6 @@ class Class(models.Model):
     date = models.DateTimeField(default=datetime.now, null=True)
     time = models.DateTimeField(default=datetime.now, null=True)
     description = models.TextField(max_length=255, null=True)
+
+    def __str__(self):
+        return self.title
