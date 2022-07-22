@@ -11,6 +11,6 @@ A web application for finding online yoga sessions and hosting them for clients
 6. 
 
 ** Potential Installation Issues:
-* You may come across an error when installing django in your virtual environment: "Fatal error in launcher: Unable to create process using 'C:users...'
+* You may come across an error when installing django in your virtual environment: "Fatal error in launcher: Unable to create process using 'C:/users/...'
 If so, try using the command: python -m pip install --upgrade pip  
-This is to update the pip installation to work with your system.
+This is to ensure the pip installation software is up to date.
