@@ -5,7 +5,7 @@ from .serializers import ClassSerializer
 from .models import Class
 
 class ClassGetAllView(generics.GenericAPIView):
-    def get(request):
+    def get(self, request):
         classes = Class.objects.all()
         serializer = ClassSerializer(classes, many=True)
-        return JsonResponse(serializer.data)
+        return JsonResponse(serializer.data, safe=False)
