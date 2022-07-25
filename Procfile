@@ -1,0 +1,1 @@
+web: gunicorn LifeInBalance.wsgi --log-file -
