@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from django.contrib.auth.models import User
-from classes.models import Class
+from models import Member
 from classes.serializers import ClassSerializer
 
 class UserCreationSerializer(serializers.ModelSerializer):
@@ -11,14 +10,14 @@ class UserCreationSerializer(serializers.ModelSerializer):
     classes = ClassSerializer(read_only=True, many=True)
 
     class Meta:
-        model=User
+        model=Member
         fields=['username', 'email', 'password', 'password2', 'classes', 'is_instructor']
         extra_kwargs = {
             'password': {'write_only': True}
         }
 
     def save(self):
-        user=User(
+        user=Member(
             email=self.validated_data['email'],
             username=self.validated_data['username'],
         )
