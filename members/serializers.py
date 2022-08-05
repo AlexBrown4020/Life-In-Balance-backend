@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from models import Member
-from classes.serializers import ClassSerializer
+from sessions.serializers import ClassSerializer
 
 class UserCreationSerializer(serializers.ModelSerializer):
     username = serializers.CharField(max_length=25, allow_null=False, allow_blank=False)
