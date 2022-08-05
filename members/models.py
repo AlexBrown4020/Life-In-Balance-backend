@@ -8,3 +8,6 @@ class User(models.Model):
     email = models.EmailField(unique=True)
     classes = models.ManyToManyField(Class, related_name='classes', blank=True)
     is_instructor = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.username
