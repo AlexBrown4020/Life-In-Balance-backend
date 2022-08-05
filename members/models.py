@@ -6,5 +6,5 @@ class User(models.Model):
 
     username = models.CharField(max_length=30, unique=True)
     email = models.EmailField(unique=True)
-    classes = models.ForeignKey(Class, on_delete=models.CASCADE, null=True, blank=True)
+    classes = models.ManyToManyField(Class, related_name='classes', blank=True)
     is_instructor = models.BooleanField(default=False)
