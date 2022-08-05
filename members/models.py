@@ -1,8 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import User
 from classes.models import Class
 
-class User(models.Model):
+class Member(models.Model):
 
     username = models.CharField(max_length=30, unique=True)
     email = models.EmailField(unique=True)
