@@ -5,7 +5,7 @@ from classes.models import Class
 class ClassSerializer(serializers.ModelSerializer):
         class Meta:
             model=Class
-            fields=['id', 'title', 'time', 'date', 'description', 'participants']
+            fields=['id', 'creator', 'title', 'time', 'date', 'description', 'participants']
 
 class UserCreationSerializer(serializers.ModelSerializer):
     username = serializers.CharField(max_length=25, allow_null=False, allow_blank=False)
