@@ -2,7 +2,7 @@ from django.db import models
 from datetime import datetime
 from members.models import Member
 
-class Class(models.Model):
+class Session(models.Model):
     creator = models.ForeignKey(Member, on_delete=models.CASCADE, related_name="creator")
     title = models.CharField(max_length=200)
     date = models.DateTimeField(default=datetime.now, null=True)
