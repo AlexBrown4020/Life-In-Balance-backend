@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import Session
+from .models import Event
 
-class SessionSerializer(serializers.ModelSerializer):
+class EventSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Session
+        model = Event
         fields = ['id', 'creator', 'title', 'description', 'date', 'time', 'participants']

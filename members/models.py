@@ -1,5 +1,5 @@
 from django.db import models
-from sessions.models import Class
+from events.models import Class
 
 class Member(models.Model):
 
