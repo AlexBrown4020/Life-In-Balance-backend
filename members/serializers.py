@@ -8,7 +8,7 @@ class UserCreationSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(max_length=100, allow_null=False, allow_blank=False)
     password = serializers.CharField(style={'input_type': 'password'}, min_length=8, write_only=True)
     password2 = serializers.CharField(style={'input_type': 'password'}, min_length=8, write_only=True)
-    classes = serializers.ClassSerializer(Class, read_only=True, many=True)
+    classes = ClassSerializer(read_only=True, many=True)
 
     class Meta:
         model=User
