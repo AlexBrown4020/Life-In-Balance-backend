@@ -19,6 +19,6 @@ from events import views
 from members.views import registration_view
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('classes.urls')),
+    path('', include('events.urls')),
     path('register/', registration_view, name='register'),
 ]
