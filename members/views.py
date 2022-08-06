@@ -1,8 +1,9 @@
 from rest_framework import status
 from django.http import JsonResponse
+from rest_framework import generics, status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from members.serializers import UserCreationSerializer
+from members.serializers import *
 from .models import Member
 # Create your views here.
 @api_view(['POST',])
