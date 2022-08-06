@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from models import Member
+from .models import Member
 from events.serializers import EventSerializer
 
 class UserCreationSerializer(serializers.ModelSerializer):
