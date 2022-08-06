@@ -2,6 +2,11 @@ from rest_framework import serializers
 from .models import Member
 from events.serializers import EventSerializer
 
+class MemberSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Member
+        fields = ['username', 'email', 'events', 'is_instructor']
+
 class UserCreationSerializer(serializers.ModelSerializer):
     username = serializers.CharField(max_length=25, allow_null=False, allow_blank=False)
     email = serializers.EmailField(max_length=100, allow_null=False, allow_blank=False)
@@ -29,4 +34,3 @@ class UserCreationSerializer(serializers.ModelSerializer):
         user.set_password(password)
         user.save()
 
-        
