@@ -9,17 +9,17 @@ from django.shortcuts import get_object_or_404
 
 class EventGetAllView(generics.GenericAPIView):
     def get(self, request):
-        sessions = Event.objects.all()
-        serializer = EventSerializer(sessions, many=True)
+        events = Event.objects.all()
+        serializer = EventSerializer(events, many=True)
         return JsonResponse(serializer.data, safe=False)
 
-class SessionView(generics.GenericAPIView):
-    def get(self, request, session_id):
-        session = get_object_or_404(Event, pk=session_id)
-        serializer = EventSerializer(session)
+class EventView(generics.GenericAPIView):
+    def get(self, request, event_id):
+        event = get_object_or_404(Event, pk=event_id)
+        serializer = EventSerializer(event)
         return JsonResponse(serializer.data, safe=False)
 
-class CreateSessionView(generics.GenericAPIView):
+class CreateEventView(generics.GenericAPIView):
     def post(self, request):
         serializer = EventSerializer(data=request.data)
         if serializer.is_valid():
