@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-from members.models import *
+from members.models import Member
 
 class Event(models.Model):
     creator = models.ForeignKey(Member, on_delete=models.CASCADE, related_name="creator")
